@@ -1,0 +1,78 @@
+snippet     for
+abbr        for () {}
+    for (int ${1} = 0; $1 < ${2}; $1++) {
+        ${0:TARGET}
+    }
+
+
+snippet     while
+alias       whi, whil
+abbr        while () {}
+    while (${1:#:condition}) {
+        ${0:TARGET}
+    }
+
+snippet main
+    int main(${1:int argc, char const **argv}) {
+        ${2:TARGET};
+        return 0;
+    }
+
+snippet include
+alias   #inc, #incl, #inclu, #includ, #include
+    #include <${1:iostream}>${0}
+
+snippet     template
+abbr        template <T>
+    template <typename ${1:T}> 
+
+delete      for_CPP11
+snippet     foreach
+alias       fore, forea, foreac
+abbr        for (:) {}
+    for (${1:auto &&} ${2:var} : ${3:container}) {
+        ${0:TARGET}
+    }
+
+delete      namespace
+snippet     namespace
+abbr        namespace {}
+alias       names, namesp, namespa, namespac
+options     head
+    namespace ${1:#:name} {
+        ${0:TARGET}
+    }
+
+snippet     using-namespace
+alias       usi, usin, using
+abbr        usin namespace
+options     head
+    using namespace ${0:TARGET};
+
+snippet     cin
+options     head
+    cin >> ${0:TARGET};
+
+snippet     cout
+alias       cou
+options     head
+    cout << ${0:TARGET} << endl;
+
+snippet     cerr
+alias       cer
+options     head
+    cerr << ${0:TARGET} << endl;
+
+snippet     std::cin
+options     head
+    std::cin >> ${0:TARGET};
+
+snippet     std::cout
+alias       std::cou
+options     head
+    std::cout << ${0:TARGET} << std::endl;
+
+snippet     std::cerr
+alias       std::cer
+options     head
+    std::cerr << ${0:TARGET} << std::endl;

@@ -1,0 +1,57 @@
+:%! sh -c "`cat`"
+cat <<EOF
+\documentclass[pdflatex,a4paper,11pt]{article}
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+\usepackage[whole]{bxcjkjatype}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{here}
+\usepackage{url}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\lstset{
+    language={C},
+    numbers=left,
+    breaklines=true,
+}
+
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+
+% \documentclass[pdflatex,17pt]{beamer}
+% \usetheme{Frankfurt}
+% %% use triangles for enumeration {{{
+% \setbeamertemplate{itemize items}[default]
+% \setbeamertemplate{enumerate items}[default]
+% % }}}
+% %% enable navigation circles {{{
+% \usepackage{remreset}
+% \makeatletter
+% \@removefromreset{subsection}{section}
+% \makeatother
+% \setcounter{subsection}{1}
+% % }}}
+% %% remove navigation symbols, which menu icons exists at bottom of slides {{{
+% \setbeamertemplate{navigation symbols}{}
+% % }}}
+% %% enable japanese {{{
+% \usepackage[whole]{bxcjkjatype}
+% % }}}
+% %% draw diagrams {{{
+% \usepackage[all]{xy}
+% % }}}
+% \usepackage{listings}
+
+\title{}
+\author{`git config user.name`}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{}
+
+\end{document}
+EOF
