@@ -130,12 +130,6 @@ NeoBundle "jceb/vim-hier"
 NeoBundle "dannyob/quickfixstatus"
 " }}}
 
-"NeoBundle 'YankRing.vim' " {{{
-"let g:yankring_history_dir = '$HOME/.vim'
-"nnoremap <silent> <Leader>yu :YRShow<CR>
-"nnoremap <Leader>y/ :YRSearch<Space>
-" }}}
-
 " parentheses
 NeoBundle 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -153,13 +147,7 @@ NeoBundle 'sudo.vim'
 NeoBundle 'tyru/autochmodx.vim'
 NeoBundle 'thinca/vim-template'
 
-NeoBundle 'rkitover/vimpager'
-
-NeoBundle 'solorab/cpl.vim'
 NeoBundle 'wting/rust.vim'
-
-NeoBundle 'glidenote/octoeditor.vim'
-let g:octopress_path = '~/local/blog'
 
 " syntax checker
 NeoBundle "scrooloose/syntastic"
@@ -173,35 +161,22 @@ let g:syntastic_cpp_checkers = ['cppcheck', 'clang-check']
 
 " markdown
 NeoBundleLazy 'tpope/vim-markdown', { "autoload" : { "filetypes" : [ "markdown" ] } }
-"NeoBundle 'plasticboy/vim-markdown'
-"NeoBundle 'suan/vim-instant-markdown'
 
 " c++
-"NeoBundle 'Rip-Rip/clang_complete'
 NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', { "autoload" : { "filetypes" : [ "cpp" ] } } " for c++11
 NeoBundleLazy 'vim-jp/cpp-vim',         { "autoload" : { "filetypes" : [ "cpp" ] } } " for c++11
 " NeoBundleLazy 'cpp.vim',                { "autoload" : { "filetypes" : [ "cpp" ] } } " for stl
 NeoBundleLazy 'vim-scripts/opengl.vim', { "autoload" : { "filetypes" : [ "cpp", "c" ] } }
 NeoBundleLazy 'kana/vim-smartchr',      { "autoload" : { "filetypes" : [ "cpp", "c" ] } } " 現在 c,cpp でしか使ってない
-" NeoBundleLazy 'kana/vim-smartinput', { 'autoload' : {'insert' : '1'} } " 併用する? http://ac-mopp.blogspot.jp/2013/07/vim-smart-input.html
 NeoBundleLazy 'solorab/sdl2.vim', { "autoload" : { "filetypes" : [ "cpp", "c" ] } }
 
 " haskell
 NeoBundleLazy 'ujihisa/neco-ghc',            { "autoload" : { "filetypes" : [ "haskell" ] } }
-"NeoBundleLazy 'lukerandall/haskellmode-vim', { "autoload" : { "filetypes" : [ "haskell" ] } } " {{{
-"let g:haddock_browser='firefox' " this must be here, not after/
-" }}}
 NeoBundleLazy 'eagletmt/ghcmod-vim',         { "autoload" : { "filetypes" : [ "haskell" ] } }
 NeoBundleLazy 'bitc/vim-hdevtools',          { "autoload" : { "filetypes" : [ "haskell" ] } }
 NeoBundleLazy 'eagletmt/unite-haddock',      { "autoload" : { "filetypes" : [ "haskell" ] } }
 NeoBundleLazy 'dag/vim2hs',                  { "autoload" : { "filetypes" : [ "haskell" ] } }
-"NeoBundleLazy 'dan-t/vim-hsimport',          { "autoload" : { "filetypes" : [ "haskell" ] } }
 NeoBundleLazy 'Twinside/vim-haskellFold',    { "autoload" : { "filetypes" : [ "haskell" ] } }
-
-" schele
-" gauche
-"NeoBundle 'aharisu/vim_goshrepl'
-"NeoBundle 'aharisu/vim-gdev'
 
 " brainfuck
 NeoBundleLazy 'kmyk/brainfuck-highlight.vim', { 'autoload' : { 'filetypes' : 'brainfuck' } }
@@ -212,37 +187,10 @@ NeoBundleLazy 'kevinw/pyflakes-vim',     { "autoload" : { "filetypes" : [ "pytho
 NeoBundleLazy 'lambdalisue/vim-django-support', { "autoload" : { "filetypes" : [ "python" ] } }
 NeoBundleLazy 'vim-scripts/Pydiction', { "autoload" : { "filetypes" : [ "python" ] } }
 
-" html
-NeoBundleLazy 'mattn/zencoding-vim', { "autoload" : { "filetypes" : [ "html" ] } }
-NeoBundleLazy 'othree/html5.vim',    { "autoload" : { "filetypes" : [ "html" ] } }
-
-" css
-NeoBundleLazy 'hail2u/vim-css3-syntax', { "autoload" : { "filetypes" : [ "css" ] } }
-" NeoBundle 'css_color.vim' " 重すぎ
-
-" coffeescript
-NeoBundleLazy 'kchmck/vim-coffee-script', { "autoload" : { "filetypes" : [ "coffee" ] } }
-
-" haxe
-NeoBundleLazy 'jdonaldson/vaxe', { "autoload" : { "filetypes" : [ "haxe" ] } }
-"NeoBundle 'MarcWeber/vim-haxe'
-
-" idris
-NeoBundleLazy 'idris-hackers/idris-vim', { "autoload" : { "filename_patterns" : "\.idr$" } }
-
-" nimrod
-NeoBundleLazy 'zah/nimrod.vim', { "autoload" : { "filename_patterns" : "\.nim$" } }
-
 " coq
 NeoBundleLazy 'jvoorhis/coq.vim', { 'autoload' : { 'filetypes' : [ 'coq', 'verilog' ] }}
 NeoBundleLazy 'CoqIDE', { 'autoload' : { 'filetypes' : [ 'coq', 'verilog' ] }}
 " NeoBundleLazy 'eagletmt/coqtop-vim', { 'autoload' : { 'filetypes' : [ 'coq', 'verilog' ] }}
-
-" arduino
-NeoBundleLazy "sudar/vim-arduino-syntax", { 'autoload' : { 'filename_patterns' : '\.ino$' } }
-
-" piet
-NeoBundleLazy 'mmisono/piet.vim', { 'autoload' : { 'filename_patterns' : '\.piet$' } }
 
 " }}}
 

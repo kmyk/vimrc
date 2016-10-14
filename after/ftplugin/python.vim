@@ -14,7 +14,7 @@ setl expandtab
 setl autoindent
 setl nosmartindent
 setl cindent
-setl textwidth=80
+" setl textwidth=80 " this is annoying
 setl colorcolumn=80
 
 " Folding

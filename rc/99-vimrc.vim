@@ -16,6 +16,7 @@ hi CursorColumn term=underline cterm=underline ctermbg=none
 set report=0
 set ruler
 set list
+set foldmethod=marker
 
 set backup " {{{
 if has('persistent_undo')
