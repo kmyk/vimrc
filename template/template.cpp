@@ -1,1 +1,0 @@
-/home/user/local/competitive-programming-library/template.cpp

@@ -1,0 +1,28 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]  # color schema
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+    set background=dark
+    au vimrc VimEnter * nested colorscheme hybrid
+    " don't fill background
+    au vimrc VimEnter * highlight Normal ctermbg=none
+    au vimrc VimEnter * highlight NonText ctermbg=none
+    au vimrc VimEnter * highlight TablineSel ctermbg=none
+    au vimrc VimEnter * highlight LineNr ctermbg=none
+    au vimrc VimEnter * highlight CursorLineNr ctermbg=none
+'''
+
+[[plugins]]
+repo = 'thinca/vim-template'
+hook_add = '''
+    let g:template_basedir = '~/.config/nvim'
+    let g:template_free_pattern = 'template'
+'''
+
+[[plugins]]
+repo = 'tyru/autochmodx.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'

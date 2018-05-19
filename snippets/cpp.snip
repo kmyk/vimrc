@@ -1,23 +1,3 @@
-snippet     for
-abbr        for () {}
-    for (int ${1} = 0; $1 < ${2}; $1++) {
-        ${0:TARGET}
-    }
-
-
-snippet     while
-alias       whi, whil
-abbr        while () {}
-    while (${1:#:condition}) {
-        ${0:TARGET}
-    }
-
-snippet main
-    int main(${1:int argc, char const **argv}) {
-        ${2:TARGET};
-        return 0;
-    }
-
 snippet include
 alias   #inc, #incl, #inclu, #includ, #include
     #include <${1:iostream}>${0}
@@ -26,53 +6,98 @@ snippet     template
 abbr        template <T>
     template <typename ${1:T}> 
 
-delete      for_CPP11
-snippet     foreach
-alias       fore, forea, foreac
-abbr        for (:) {}
-    for (${1:auto &&} ${2:var} : ${3:container}) {
-        ${0:TARGET}
-    }
-
-delete      namespace
-snippet     namespace
-abbr        namespace {}
-alias       names, namesp, namespa, namespac
-options     head
-    namespace ${1:#:name} {
-        ${0:TARGET}
-    }
-
-snippet     using-namespace
-alias       usi, usin, using
-abbr        usin namespace
-options     head
-    using namespace ${0:TARGET};
-
 snippet     cin
-options     head
     cin >> ${0:TARGET};
 
 snippet     cout
 alias       cou
-options     head
     cout << ${0:TARGET} << endl;
 
 snippet     cerr
 alias       cer
-options     head
     cerr << ${0:TARGET} << endl;
 
 snippet     std::cin
-options     head
     std::cin >> ${0:TARGET};
 
 snippet     std::cout
 alias       std::cou
-options     head
     std::cout << ${0:TARGET} << std::endl;
 
 snippet     std::cerr
 alias       std::cer
-options     head
     std::cerr << ${0:TARGET} << std::endl;
+
+snippet     scanf
+alias       sc, sca, scan
+    scanf("%d${1:}", &${2:});${0}
+
+snippet     printf
+alias       pr, pri, prin, print
+    printf("%d${1:}\n", ${2:});${0}
+
+snippet     fprintf
+alias       fp, fpr, fpri, fprin, fprint
+    fprintf(stderr, "%d${1:}\n", ${2:});${0}
+
+snippet     REP
+alias       RE, REP, re, rep
+    REP (${1:i}, ${2:n}) {
+        ${0}
+    }
+
+snippet     push_back
+alias       push_, push_b, push_ba, push_bac, pb
+options     word
+    push_back(${1:a})${0}
+
+snippet     emplace_back
+alias       emplace_, emplace_b, emplace_ba, emplace_bac, eb
+options     word
+    emplace_back(${1:a})${0}
+
+snippet     make_pair
+alias       make_p, make_pa, make_pai, mp
+options     word
+    make_pair(${1:a}, ${2:b})${0}
+
+snippet     ALL
+alias       AL, ALL, al, all
+    ALL(${1:sort}, ${2:a})${0}
+
+snippet     lambda
+alias       [&, [&], [&](
+    [&](${1:int i}) { return ${2:a[i]}; }${0}
+
+snippet     vector
+alias       ve, vec, vect, vecto
+options     word
+    vector<${1:T}> ${0}
+
+snippet     pair
+alias       pa, pai
+options     word
+    pair<${1:T}, ${2:T}> ${0}
+
+snippet     tuple
+alias       tup, tupl
+options     word
+    tuple<${1:T}, ${2:T}, ${3:T}> ${0}
+
+snippet     array
+alias       arr, arra, ary
+options     word
+    array<${1:T}, ${2:n}> ${0}
+
+snippet     function
+alias       fu, fun, func, funct, functi, functio
+    function<${1:T} (${2:T})> ${0}
+
+snippet     return
+alias       ret, retu, retur, reut, reutr
+    return ${0};
+
+snippet     partial_sum
+    partial_sum
+snippet     accumulate
+    accumulate

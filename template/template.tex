@@ -1,49 +1,69 @@
 :%! sh -c "`cat`"
 cat <<EOF
-\documentclass[pdflatex,a4paper,11pt]{article}
-\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
-\usepackage[whole]{bxcjkjatype}
+\documentclass{article}
+\documentclass[a4paper,11pt]{ltjsarticle}
+
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}  % 余白の設定
 \usepackage{latexsym}
-\usepackage{amsmath,amssymb}
-\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{here}
 \usepackage{url}
 \usepackage{colortbl}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
+
+% ソースコード埋め込みの設定
+\usepackage{listings}
 \lstset{
-    language={C},
+    language=C++,
     numbers=left,
     breaklines=true,
+    basicstyle=\ttfamily,
 }
 
+% theorem環境の設定
+% -   節ごとに全体で共通の番号
+% -   いい感じに参照できる (cleverref)
+% -   冒頭に改行 末尾にdiamond (amsthm)
+\newcommand*{\newqedtheorem}[2]{
+    \newenvironment{#1}[1][]{
+        \begin{#2}[##1]
+            \leavevmode
+            \newline
+            \renewcommand{\qedsymbol}{$$\diamond$$}
+            \pushQED{\qed}
+    }{
+            \qedhere
+            \popQED
+        \end{#2}
+    }
+}
+\newtheorem{theorem*}{定理}[section]
+\Crefname{theorem*}{定理}{定理}
+\crefname{theorem*}{定理}{定理}
+\newqedtheorem{theorem}{theorem*}
+\newcommand*{\newclevertheorem}[2]{
+    \newtheorem{#1*}[theorem*]{#2}
+    \Crefname{#1*}{#2}{#2}
+    \crefname{#1*}{#2}{#2}
+    \newqedtheorem{#1}{#1*}
+}
+\newclevertheorem{axiom}{公理}
+\newclevertheorem{corollary}{系}
+\newclevertheorem{definition}{定義}
+\newclevertheorem{exercise}{問}
+\newclevertheorem{exmaple}{例}
+\newclevertheorem{lemma}{補題}
+\newclevertheorem{note}{注}
+\newclevertheorem{proposition}{命題}
+
+% captionの設定
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
-
-% \documentclass[pdflatex,17pt]{beamer}
-% \usetheme{Frankfurt}
-% %% use triangles for enumeration {{{
-% \setbeamertemplate{itemize items}[default]
-% \setbeamertemplate{enumerate items}[default]
-% % }}}
-% %% enable navigation circles {{{
-% \usepackage{remreset}
-% \makeatletter
-% \@removefromreset{subsection}{section}
-% \makeatother
-% \setcounter{subsection}{1}
-% % }}}
-% %% remove navigation symbols, which menu icons exists at bottom of slides {{{
-% \setbeamertemplate{navigation symbols}{}
-% % }}}
-% %% enable japanese {{{
-% \usepackage[whole]{bxcjkjatype}
-% % }}}
-% %% draw diagrams {{{
-% \usepackage[all]{xy}
-% % }}}
-% \usepackage{listings}
+\renewcommand{\lstlistingname}{プログラム}
 
 \title{}
 \author{`git config user.name`}

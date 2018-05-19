@@ -1,2 +1,3 @@
 default:
-	ln -s `realpath .` ~/.vim
+	[ ! -e ~/.config/nvim ]
+	ln -s ${CURDIR} ~/.config/nvim

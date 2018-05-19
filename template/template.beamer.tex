@@ -1,0 +1,76 @@
+:%! sh -c "`cat`"
+cat <<EOF
+\documentclass[unicode, 12pt]{beamer}
+
+%% theme {{{
+\usetheme{metropolis}  % https://github.com/matze/mtheme
+\metroset{sectionpage=none}  % don't make section pages
+\metroset{numbering=none}  % remove the page number
+\metroset{block=fill}
+\setbeamertemplate{itemize items}[default]  % use triangles for itemize environments
+% \setbeamercovered{transparent}  % grey out items after \pause
+%% add the navigation bar {{{
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip2pt\insertnavigation{\paperwidth}\vskip2pt  % if you use section names
+    % \vskip-7pt\insertnavigation{\paperwidth}\vskip2pt  % if section names are empty
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+  \end{beamercolorbox}
+}
+\setbeamercolor{section in head/foot}{fg=normal text.bg, bg=structure.fg}
+% }}}
+%% resize frametitle {{{
+\makeatletter
+\setlength{\metropolis@frametitle@padding}{1.2ex}
+\makeatother
+% }}}
+%% enable navigation circles {{{
+\usepackage{remreset}
+\makeatletter
+\@removefromreset{subsection}{section}
+\makeatother
+\setcounter{subsection}{1}
+% }}}
+% }}}
+
+\usepackage{luatexja}  % use japanese
+
+\usepackage[absolute, overlay]{textpos}  % positioning with \begin{textblock*}{width}(x, y) \end{textblock*}, see https://blog.tokor.org/2018/01/19/LaTeX-Beamer%E3%81%A7%E5%9B%B3%E8%A1%A8%E3%81%AA%E3%81%A9%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%82%92%E7%B5%B6%E5%AF%BE%E5%BA%A7%E6%A8%99%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/
+% \usepackage[colorgrid,gridunit=pt,texcoord]{eso-pic}  % draws the gird
+\usepackage{layout}  % \layout dumps sizes of header, footer, etc
+
+\title{}
+\author{`git config user.name`}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\section{}
+
+\begin{frame}{foo}
+    \begin{textblock*}{50pt}(300pt, 50pt)
+        hello hello hello hello hello hello hello hello
+    \end{textblock*}
+    \begin{textblock*}{100pt}(100pt, 200pt)
+        world world world world world world world world
+    \end{textblock*}
+\end{frame}
+
+\begin{frame}{bar}
+    bar
+\end{frame}
+
+\section{}
+
+\begin{frame}{baz}
+    baz
+\end{frame}
+
+\end{document}
+EOF
