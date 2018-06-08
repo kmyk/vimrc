@@ -47,6 +47,9 @@ set smartcase
 set report=0
 set relativenumber
 set modeline
+set fileencodings=utf-8,cp932,sjis,euc-jp,latin1
+
+let g:tex_conceal = ""
 
 " store undo info {{{
 if has('persistent_undo')
@@ -76,3 +79,11 @@ vnoremap <silent> : ;
 
 " repeat
 nnoremap <silent> ;; :<C-P><CR>
+
+" chmod +x if shebang exists
+function MakeScriptExecuteable()
+    if getline(1) =~ "^#!"
+        silent !chmod +x 
+    endif
+endfunction
+au BufWritePost * call MakeScriptExecuteable()

@@ -5,8 +5,13 @@ hook_source = '''
     inoremap <expr><tab> pumvisible() ? "\<C-n>" :
         \ neosnippet#expandable_or_jumpable() ?
         \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+    let g:neocomplete#text_mode_filetypes = { "_" : 1 }
 '''
 on_i = 1
+depends = [ 'ujihisa/neco-look' ]
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'

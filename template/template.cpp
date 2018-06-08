@@ -1,0 +1,1 @@
+/home/user/GitHub/competitive-programming-library/template.cpp

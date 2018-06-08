@@ -22,7 +22,4 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tyru/autochmodx.vim'
-
-[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
